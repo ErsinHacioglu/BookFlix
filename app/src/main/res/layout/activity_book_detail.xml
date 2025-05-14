@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Arka Plan Resmi -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bookflixlogored_background"
+        android:alpha="0.3" />
+
+    <!-- Üst Beyaz Şerit -->
+    <View
+        android:id="@+id/topWhiteStrip"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/white" />
+
+    <!-- Alt Beyaz Şerit -->
+    <View
+        android:id="@+id/bottomWhiteStrip"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white" />
+
+    <!-- Favori Kalp Butonu (iconlar svgrepodan vector olarak alındı)-->
+    <ImageButton
+        android:id="@+id/favoriteButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/heart"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/round_button_background"
+        android:contentDescription="Favori Butonu"
+        android:elevation="2dp" />
+    <!--erişilebilirlik ve ekran okuyuclar için var description ama bizde yok-->
+
+    <!-- PDF Aç Butonu -->
+    <ImageButton
+        android:id="@+id/openPdfButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/pdf_icon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"
+        android:background="@android:color/white"
+        android:contentDescription="PDF Aç" />
+    <!-- sağdan sola dilleri de desteklemesi için left yerine start-->
+
+    <!-- İndir Butonu  -->
+    <ImageButton
+        android:id="@+id/downloadBookButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/download_icon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:background="@android:color/white"
+        android:contentDescription="Kitabı İndir" />
+
+    <!-- Kitap Detayları -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topWhiteStrip"
+        android:layout_above="@id/bottomWhiteStrip"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bookTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/bookAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#666666"
+                android:paddingBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/bookContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:textColor="#333333"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

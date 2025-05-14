@@ -1,0 +1,117 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Arka Plan Resmi -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bookflixlogored_background"
+        android:alpha="0.3" />
+
+    <!-- üst beyaz şerit -->
+    <View
+        android:id="@+id/topWhiteStrip"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
+        android:layout_alignParentTop="true" />
+
+    <!-- Profil -->
+    <ImageButton
+        android:id="@+id/profileIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/user"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="2dp"
+        android:contentDescription="Profil" />
+
+    <!-- Ayarlar -->
+    <ImageButton
+        android:id="@+id/subscriptionIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/settings"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="2dp"
+        android:contentDescription="Abonelik Ayarları" />
+
+    <!-- arama çubuğu -->
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/subscriptionIcon"
+        android:layout_toStartOf="@id/profileIcon"
+        android:layout_alignTop="@id/subscriptionIcon"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:queryHint="Kitap ara..."
+        android:iconifiedByDefault="false"
+        android:background="@drawable/search_background" />
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchView"
+        android:layout_above="@id/bottomWhiteStrip"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- başlık -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kitap Listesi"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- RecyclerView clip paddingle sınırlı gözükmesin diye-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/searchView"
+            android:layout_above="@id/bottomWhiteStrip"
+            android:clipToPadding="false"
+            android:padding="24dp"
+            android:paddingBottom="64dp"
+            android:scrollbars="vertical"
+            android:contentDescription="Kitap Listesi"/>
+    </LinearLayout>
+
+    <!-- Alt Beyaz Şerit -->
+    <View
+        android:id="@+id/bottomWhiteStrip"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:elevation="1dp" />
+
+    <!-- Favori Butonu -->
+    <ImageButton
+        android:id="@+id/favoritesIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/heart"
+        android:background="@drawable/round_button_background"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="Favori Kitaplar"
+        android:elevation="2dp" />
+
+</RelativeLayout>

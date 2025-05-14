@@ -1,0 +1,86 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Arka Plan Resmi -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bookflixlogored_background"
+        android:alpha="0.3"/>
+
+    <!-- vertical üstten alta gorizental soldan sağa-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp">
+
+        <!-- başlık -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giriş Yap"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- eposta input type önemli iş kolaylaştırıyor.-->
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-posta"
+            android:inputType="textEmailAddress"
+            android:background="#80FFFFFF"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- şifre -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Şifre"
+            android:inputType="textPassword"
+            android:background="#80FFFFFF"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- giriş yap -->
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giriş Yap"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:background="@color/grayColor"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Kayıt Ol Butonu -->
+        <Button
+            android:id="@+id/goToRegisterButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kayıt Ol"
+            android:textColor="@android:color/white"
+            android:background="@color/grayColor"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</RelativeLayout>
